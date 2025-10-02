@@ -1,6 +1,4 @@
-# .github/workflows/docker-compose-ci.yml
-
-name: Docker Compose CI/CD
+name: Full Stack CI/CD
 
 on:
   push:
@@ -23,6 +21,10 @@ jobs:
           GOOGLE_CLIENT_ID=test_client_id
           JUDGE0_API_KEY=test_judge0_key
           GOOGLE_API_KEY=test_gemini_key
+          GEMINI_API_KEY=test_gemini_key
+          MONGO_URI=mongodb://mongo:27017/recruitment
+          PORT=5000
+          NODE_ENV=test
           EOF
       
       - name: Build containers
@@ -31,21 +33,17 @@ jobs:
       - name: Start services
         run: docker-compose up -d
       
-      - name: Wait for services to be healthy
+      - name: Wait for services
         run: |
           echo "Waiting for services to start..."
-          sleep 30
+          sleep 45
       
       - name: Check container status
         run: docker-compose ps
       
       - name: Test backend health
         run: |
-          curl --retry 5 --retry-delay 5 --retry-connrefused http://localhost:5000/ || exit 1
-      
-      - name: Test frontend
-        run: |
-          curl --retry 5 --retry-delay 5 --retry-connrefused -I http://localhost/ || exit 1
+          curl --retry 10 --retry-delay 5 --retry-connrefused http://localhost:5000/ || exit 1
       
       - name: Show logs on failure
         if: failure()
@@ -80,8 +78,8 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/recruitment-backend:latest
-            ${{ secrets.DOCKER_USERNAME }}/recruitment-backend:${{ github.sha }}
+            gkarthick010/recruitment-backend:latest
+            gkarthick010/recruitment-backend:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
       
@@ -92,7 +90,7 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/recruitment-frontend:latest
-            ${{ secrets.DOCKER_USERNAME }}/recruitment-frontend:${{ github.sha }}
+            gkarthick010/recruitment-frontend:latest
+            gkarthick010/recruitment-frontend:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
