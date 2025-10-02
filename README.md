@@ -46,3 +46,4 @@ Create a .env in ai_services4/resume-analyzer/ with:
 ```
 GEMINI_API_KEY=******************
 "# devops_trail" 
+"# Trigger CI/CD" 
