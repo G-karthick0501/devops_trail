@@ -85,8 +85,8 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            gkarthick010/recruitment-backend:latest
-            gkarthick010/recruitment-backend:${{ github.sha }}
+            gkarthick010/devops_trail:latest
+            gkarthick010/devops_trail:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
       
@@ -97,7 +97,7 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            gkarthick010/recruitment-frontend:latest
-            gkarthick010/recruitment-frontend:${{ github.sha }}
+            gkarthick010/devops_trail:latest
+            gkarthick010/devops_trail:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
