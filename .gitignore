@@ -62,3 +62,6 @@ coverage/
 
 .env
 docker-compose.override.yml
+# Kubernetes secrets (NEVER commit)
+k8s/02-secrets.yaml
+k8s/*secrets*.yaml

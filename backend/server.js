@@ -57,3 +57,4 @@ async function start() {
 }
 
 start();
+console.log('VERSION 2.0 - Updated');
