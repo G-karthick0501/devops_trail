@@ -152,6 +152,14 @@ docker-compose up -d --build
 
 ---
 
+## Screenshots
+
+1.Prometheus + Grafana Dashboard:
+g-karthick0501/devops_trail/pics/Grafana_Dashboard.png
+
+2.
+
+
 # End of Documentation
 
 
