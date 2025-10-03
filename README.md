@@ -68,15 +68,7 @@ docker-compose down -v
 docker-compose up -d --build
 ```
 
-## Project Structure
-  .
-  ├── .github/workflows/    # CI/CD pipeline definitions
-  ├── ansible/              # Infrastructure automation
-  ├── backend/              # Node.js API
-  ├── frontend/             # React application
-  ├── k8s/                  # Kubernetes manifests
-  ├── monitoring/           # Prometheus and Grafana config
-  └── docker-compose.yml    # Local development orchestration
+
 
 
 
