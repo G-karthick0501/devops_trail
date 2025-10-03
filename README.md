@@ -154,25 +154,23 @@ docker-compose up -d --build
 
 ## Screenshots
 
-1.Prometheus + Grafana Dashboard:
-pics/Grafana_Dashboard.png
+1. **Prometheus + Grafana Dashboard**  
+![Prometheus + Grafana Dashboard](pics/Grafana_Dashboard.png)
 
-2.Deployment Strategy-GITHUB Actions:
-pics/GITHUB_ACTIONS.png,
-pics/GITHUB_ACTIONS_2.png
+2. **Deployment Strategy - GITHUB Actions**  
+![GitHub Actions CI/CD 1](pics/GITHUB_ACTIONS.png)  
+![GitHub Actions CI/CD 2](pics/GITHUB_ACTIONS_2.png)  
 
+3. **Configuration Management & IaC - Playbook & Inventory**  
+![Ansible Configuration Summary](pics/Ansible_config_summary.png)  
+![Ansible Files](pics/Ansible_files.png)  
 
-3.Configuration Management & IaC-:
-pics/Ansible_files.png
-pics/Ansible_config_summary.png
+4. **Containerization & Orchestration - Rolling Updates & Rollback**  
+![Rolling Update & Rollback](pics/Roll_back.png)  
 
+5. **CI/CD Pipeline Overview**  
+![Pipeline Overview](pics/cicd_pipe.png)
 
-4.Containerization & Orchestration-rolling updates & rollback:
-pics/Roll_back.png
-
-
-5.CI/CD Pipeline:
-pics/cicd_pipe.png
 
 # End of Documentation
 
