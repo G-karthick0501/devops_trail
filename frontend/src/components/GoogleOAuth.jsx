@@ -73,7 +73,7 @@ export default function GoogleOAuth() {
         }
       );
     }
-  }, [login, handleGoogleLogin, GOOGLE_CLIENT_ID]); // Add dependencies to useEffect
+  }, [login]); // Add dependencies to useEffect
   
   // Note: handleGoogleLogin is a stable function in modern React, so it's fine.
   // However, older React versions might throw a warning. This is a minor detail.

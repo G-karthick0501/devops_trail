@@ -4,7 +4,6 @@ import ResponseInput from './ResponseInput';
 
 export default function InterviewSession({ 
   interview,
-  onNext,
   onComplete 
 }) {
   const {

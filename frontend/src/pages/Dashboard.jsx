@@ -28,7 +28,6 @@ export default function Dashboard() {
           navigate("/login");
           return;
         }
-        const data = await res.json();
         // The user is already in context, but we can update it if needed.
         // setMe(data);
       })

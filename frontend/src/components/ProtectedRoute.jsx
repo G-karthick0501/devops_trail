@@ -23,7 +23,7 @@ export default function ProtectedRoute({
       'hr': '/hr-dashboard',
       'admin': '/admin-dashboard'
     };
-    return <Navigate to={roleRedirects[user.role] || '/'} replace />;
+    return <Navigate to={roleRedirects[user.role] || fallbackPath } replace />;
   }
 
   return children;
