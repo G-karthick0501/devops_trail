@@ -7,10 +7,9 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in on app start
     const token = localStorage.getItem('token');
     const userData = localStorage.getItem('user');
-    
+
     if (token && userData) {
       try {
         setUser(JSON.parse(userData));
@@ -32,33 +31,30 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-  const hasRole = (role) => {
-    return user?.role === role;
-  };
+  const hasRole = (role) => user?.role === role;
 
-  const hasAnyRole = (roles) => {
-    return roles.includes(user?.role);
-  };
+  const hasAnyRole = (roles) => roles.includes(user?.role);
 
-  const isAuthenticated = () => {
-    return !!user && !!localStorage.getItem('token');
-  };
+  const isAuthenticated = () => !!user && !!localStorage.getItem('token');
 
   return (
-    <AuthContext.Provider value={{
-      user,
-      loading,
-      login,
-      logout,
-      hasRole,
-      hasAnyRole,
-      isAuthenticated
-    }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        login,
+        logout,
+        hasRole,
+        hasAnyRole,
+        isAuthenticated
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) {
