@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: recruitment-frontend:v1
+        image: gkarthick010/recruitment-frontend:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

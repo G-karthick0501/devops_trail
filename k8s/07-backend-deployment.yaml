@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: recruitment-backend:v1
+        image: gkarthick010/recruitment-backend:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
